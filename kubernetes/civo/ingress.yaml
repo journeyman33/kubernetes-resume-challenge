@@ -1,0 +1,24 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  annotations:
+    cert-manager.io/cluster-issuer: letsencrypt-prod
+    kubernetes.io/ingress.class: traefik
+  name: web-ingress
+  namespace: ecom
+spec:
+  rules:
+  - host: c0b7b3e7-24f0-461e-b073-7019b429ad2b.k8s.civo.com
+    http:
+      paths:
+      - backend:
+          service:
+            name: web
+            port:
+              number: 80
+        path: /
+        pathType: Prefix
+  tls:
+  - hosts:
+    - c0b7b3e7-24f0-461e-b073-7019b429ad2b.k8s.civo.com
+    secretName: mycert 

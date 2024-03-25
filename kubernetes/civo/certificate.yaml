@@ -1,0 +1,14 @@
+apiVersion: cert-manager.io/v1
+kind: Certificate
+metadata:
+  name: mycert
+  namespace: ecom
+spec:
+  secretName: mycert
+  issuerRef:
+    name: letsencrypt-prod
+    kind: ClusterIssuer
+  commonName: c0b7b3e7-24f0-461e-b073-7019b429ad2b.k8s.civo.com
+  dnsNames:
+  - c0b7b3e7-24f0-461e-b073-7019b429ad2b.k8s.civo.com
+

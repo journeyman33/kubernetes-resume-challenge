@@ -1,0 +1,31 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: mysql
+  namespace: ecom
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: mysql
+  template:
+    metadata:
+      labels:
+        app: mysql
+    spec:
+      containers:
+      - name: mysql
+        image: mariadb:lts
+        envFrom:
+        - configMapRef:
+            name: web-env-vars
+        - secretRef:
+            name: mysql-secret
+        volumeMounts:
+        - name: db-load-script-volume
+          mountPath: /docker-entrypoint-initdb.d
+      volumes:
+      - name: db-load-script-volume
+        configMap:
+          name: db-load-script
+

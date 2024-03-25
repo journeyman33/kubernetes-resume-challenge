@@ -1,0 +1,11 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: mysql-env-vars
+data:
+   MYSQL_HOST: mysql-service
+   MYSQL_PORT: "3306"
+   MYSQL_USER: user
+   MYSQL_PASSWORD: secret
+   MYSQL_ROOT_PASSWORD: secret
+   MYSQL_DATABASE: ecomdb

@@ -1,0 +1,28 @@
+# Ignore user-specific files
+/.vscode
+/.idea
+/.sass-cache
+/node_modules
+/vendor
+.env
+
+# Ignore build and compiled files
+/build
+/dist
+/public/uploads
+
+# Ignore log files
+/logs
+*.log
+
+# Ignore database files
+/.db
+/*.sqlite
+
+# Ignore OS or editor generated files
+/.DS_Store
+*.swp
+*.lock
+
+# Ignore temporary files
+*.tmp
