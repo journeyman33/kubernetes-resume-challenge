@@ -1,4 +1,5 @@
-This repo contains the code for the Kubernetes Resume challenge outlined in my blog at https://github.com/journeyhnam/blog      
+This repo contains the code for the Kubernetes Resume challenge outlined in my blog at https://github.com/journeyhnam/blog   
+      
 
 > *Cloud Resume Challenge: A hands-on project designed to deepen your understanding of cloud services through the practical application of building and deploying a resume. This challenge is an excellent way to apply what you've learned in a real-world scenario, enhancing your cloud skills. For more details, visit* [Cloud Resume Challenge](https://cloudresumechallenge.dev/).
 
