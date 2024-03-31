@@ -23,3 +23,9 @@ spec:
             name: web-env-vars
         - secretRef:
             name: mysql-secret             
+        env:
+        - name: FEATURE_DARK_MODE
+          valueFrom:
+            configMapKeyRef:
+              name: feature-toggle
+              key: FEATURE_DARK_MODE
