@@ -1,7 +1,7 @@
 #!/bin/bash
 # Set up new civo cluster and substite the old cluster settings
 
-civo kubernetes create ecom --remove-applications=traefik2-nodeport --applications traefik2-loadbalancer,cert-manager --cni-plugin cilium  -n 1 -s g4s.kube.medium create-firewall  --wait --save --merge --switch
+civo kubernetes create ecom --remove-applications=traefik2-nodeport --applications traefik2-loadbalancer,cert-manager --cni-plugin cilium  -n 1 -s g4s.kube.small create-firewall  --wait --save --merge --switch
 
 kubectl create namespace ecom
 

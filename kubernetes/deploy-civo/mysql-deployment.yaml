@@ -24,7 +24,12 @@ spec:
         volumeMounts:
         - name: db-load-script-volume
           mountPath: /docker-entrypoint-initdb.d
+        - name: mysql-persistent-storage
+          mountPath: /var/lib/mysql
       volumes:
+      - name: mysql-persistent-storage
+        persistentVolumeClaim:
+          claimName: mysql-vol
       - name: db-load-script-volume
         configMap:
           name: db-load-script
