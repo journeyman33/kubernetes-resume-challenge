@@ -8,7 +8,7 @@ metadata:
   namespace: ecom
 spec:
   rules:
-    - host: 82424f2d-c61e-4956-ab59-9d30f88ba52a.k8s.civo.com
+    - host: 5007428c-4b34-49a0-88e5-994e426caa4a.k8s.civo.com
       http:
         paths:
           - backend:
@@ -20,6 +20,6 @@ spec:
             pathType: Prefix
   tls:
     - hosts:
-        - 82424f2d-c61e-4956-ab59-9d30f88ba52a.k8s.civo.com
+        - 5007428c-4b34-49a0-88e5-994e426caa4a.k8s.civo.com
       secretName: mycert
 
