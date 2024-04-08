@@ -8,7 +8,6 @@ spec:
   issuerRef:
     name: letsencrypt-prod
     kind: ClusterIssuer
-  commonName: 82424f2d-c61e-4956-ab59-9d30f88ba52a.k8s.civo.com
+  commonName: 0c8182d3-c0af-48e1-9db5-c3462e4d7d73.lb.civo.com
   dnsNames:
-  - 82424f2d-c61e-4956-ab59-9d30f88ba52a.k8s.civo.com
-
+  - 0c8182d3-c0af-48e1-9db5-c3462e4d7d73.lb.civo.com
