@@ -42,6 +42,42 @@ Key components:
 - **Monitoring:** Basic Prometheus/Grafana stack setup (optional)
 - **Ingress Controller:** NGINX for route handling and HTTPS exposure
 
+%%{init: {'theme':'forest', 'themeVariables': { 'primaryColor': '#91c9f7', 'edgeLabelBackground':'#ffffff'}}}%%
+graph TD
+    subgraph Developer_Workstation["💻 Developer Workstation"]
+        laptop[Local Dev Environment]
+        openfaas[OpenFaaS / Raspberry Pi]
+        laptop --> openfaas
+    end
+
+    laptop -->|Push Code| github[(GitHub Repo)]
+    github -->|Triggers Workflow| actions[GitHub Actions CI/CD]
+    actions -->|Build & Push Images| dockerhub[(Docker Hub Registry)]
+
+    subgraph Civo_Cloud["☁️ Civo Managed K3s Cluster"]
+        subgraph Node_Subnet["Node Subnet"]
+            ingress[Ingress Controller / LoadBalancer]
+            web[Web Frontend Service]
+            ecom[E-Commerce API Service]
+            mysql[(MySQL Database)]
+            deploy1[Deployment Controller - Web]
+            deploy2[Deployment Controller - Ecom]
+            
+            ingress --> web
+            ingress --> ecom
+            web --> mysql
+            ecom --> mysql
+            deploy1 --> web
+            deploy2 --> ecom
+        end
+    end
+
+    dockerhub -->|Pull Container Images| Civo_Cloud
+    github -->|VPN + Secure Access| Firewall[Firewall + DNS]
+    Firewall -->|Routes External Traffic| Civo_Cloud
+
+
+
 ---
 
 ## 🧰 Tools and Technologies
