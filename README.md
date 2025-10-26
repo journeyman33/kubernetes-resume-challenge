@@ -71,11 +71,11 @@ graph TD
             deploy2 --> ecom
         end
     end
-```
+
     dockerhub -->|Pull Container Images| Civo_Cloud
     github -->|VPN + Secure Access| Firewall[Firewall + DNS]
     Firewall -->|Routes External Traffic| Civo_Cloud
-
+```
 
 
 ---
