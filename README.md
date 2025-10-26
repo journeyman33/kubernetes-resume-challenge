@@ -42,7 +42,7 @@ Key components:
 - **Monitoring:** Basic Prometheus/Grafana stack setup (optional)
 - **Ingress Controller:** NGINX for route handling and HTTPS exposure
 
-%%{init: {'theme':'forest', 'themeVariables': { 'primaryColor': '#91c9f7', 'edgeLabelBackground':'#ffffff'}}}%%
+```mermaid
 graph TD
     subgraph Developer_Workstation["💻 Developer Workstation"]
         laptop[Local Dev Environment]
@@ -71,7 +71,7 @@ graph TD
             deploy2 --> ecom
         end
     end
-
+```
     dockerhub -->|Pull Container Images| Civo_Cloud
     github -->|VPN + Secure Access| Firewall[Firewall + DNS]
     Firewall -->|Routes External Traffic| Civo_Cloud
