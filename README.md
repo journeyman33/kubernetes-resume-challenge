@@ -35,7 +35,7 @@ When starting the challenge, I intentionally chose **Civo** as my cloud platform
 The project demonstrates a full **DevOps lifecycle**, combining GitOps principles, IaC, and continuous deployment.
 
 Key components:
-- **Frontend:** Static resume web app hosted via NGINX container
+- **Frontend:** Static resume web app hosted via Apache HTTP + PHP Container
 - **Kubernetes Cluster:** Managed on **Civo Cloud**
 - **CI/CD Pipeline:** GitHub Actions for automated build, test, and deploy
 - **Infrastructure as Code:** Terraform for cluster provisioning
